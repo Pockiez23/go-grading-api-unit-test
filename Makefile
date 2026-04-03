@@ -12,11 +12,12 @@ build:
 	go build -o bin/server cmd/server/main.go
 
 test:
-	go test ./...
+	go test ./internal/grade -coverprofile=coverage.out & \
+    	go tool cover -html=coverage.out
 
 tidy:
 	go mod tidy
 
 exec-project:
 	go mod tidy & go build -o bin/server cmd/server/main.go & \
-	go run cmd/server/main.go
+		go run cmd/server/main.go

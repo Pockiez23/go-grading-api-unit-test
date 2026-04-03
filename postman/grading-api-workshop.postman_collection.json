@@ -73,46 +73,6 @@
       "response": []
     },
     {
-      "name": "Calculate Grade",
-      "request": {
-        "auth": {
-          "type": "bearer",
-          "bearer": [
-            {
-              "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzUyNzYzNzYsInJvbGUiOiJzdHVkZW50IiwidXNlcm5hbWUiOiJKb2huIn0.yNkr_oUrEreEjX0cDjD0ViYclt_UkcpyUkFK1WkUjwM",
-              "type": "string"
-            }
-          ]
-        },
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"studentId\": \"6609650999\",\n  \"homework\": 80,\n  \"midterm\": 70,\n  \"final\": 90\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/grade/calculate",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "grade",
-            "calculate"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
       "name": "Submit Grade",
       "request": {
         "auth": {
@@ -120,7 +80,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzUyNzI3NTgsInJvbGUiOiJpbnN0cnVjdG9yIiwidXNlcm5hbWUiOiJpbnN0cnVjdG9yIn0.3O0Whwm4FhUxipfd4InPs1FDrAdQx7wVh_y5iRxfqRU",
+              "value": "{{jwt_token}}",
               "type": "string"
             }
           ]
@@ -129,7 +89,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"studentId\": \"6609650999\",\n  \"homework\": 80,\n  \"midterm\": 70,\n  \"final\": 90\n}",
+          "raw": "{\n  \"studentId\": \"{{studentId}}\",\n  \"homework\": 80,\n  \"midterm\": 70,\n  \"final\": 90\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -163,7 +123,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzUyNzYxNTksInJvbGUiOiJpbnN0cnVjdG9yIiwidXNlcm5hbWUiOiJLcml0dGl5YUIifQ.dGW8P1hSDzKheylnj3fTDeUoclMuk6GNSME3QOPbnPo",
+              "value": "{{jwt_token}}",
               "type": "string"
             }
           ]
@@ -172,7 +132,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"studentId\": \"6609650999\",\n  \"homework\": 80,\n  \"midterm\": 70,\n  \"final\": 90\n}"
+          "raw": ""
         },
         "url": {
           "raw": "http://localhost:8080/api/grade/:studentId",
@@ -189,12 +149,18 @@
           "variable": [
             {
               "key": "studentId",
-              "value": "6609650999"
+              "value": "223456789"
             }
           ]
         }
       },
       "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "jwt_token",
+      "value": ""
     }
   ]
 }
