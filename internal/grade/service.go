@@ -1,3 +1,4 @@
+// service.go ส่วนของ Business Logic
 package grade
 
 import (

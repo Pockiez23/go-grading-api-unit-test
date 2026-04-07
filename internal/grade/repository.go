@@ -1,3 +1,4 @@
+// repository.go ทำหน้าที่ติดต่อกับ Database
 package grade
 
 import (

@@ -33,16 +33,15 @@ func main() {
 		protected := api.Group("/")
 		protected.Use(middleware.AuthMiddleware())
 		{
-			// TODO: uncomment this when we want to see user profile
-			//protected.GET("/profile", func(c *gin.Context) {
-			//	username, _ := c.Get("username")
-			//	role, _ := c.Get("role")
-			//
-			//	c.JSON(200, gin.H{
-			//		"username": username,
-			//		"role":     role,
-			//	})
-			//})
+			protected.GET("/profile", func(c *gin.Context) {
+				username := "Jaonine"
+				role := "student admin"
+
+				c.JSON(200, gin.H{
+					"username": username,
+					"role":     role,
+				})
+			})
 
 			protected.POST("/grade/submit",
 				middleware.RequireRole("instructor"),
@@ -53,7 +52,7 @@ func main() {
 		}
 	}
 
-	err := r.Run(":8080")
+	err := r.Run(":3000")
 	if err != nil {
 		log.Fatal(errors.New("failed to run server"))
 		return

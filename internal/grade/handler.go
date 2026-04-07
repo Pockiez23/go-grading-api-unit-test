@@ -1,3 +1,4 @@
+// handler.go ทำหน้าที่รับส่ง Request และ Response ผ่าน HTTP (ใช้ Gin Framework)
 package grade
 
 import (

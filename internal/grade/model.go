@@ -1,3 +1,4 @@
+// model.go สำหรับเก็บโครงสร้างข้อมูล (struct) ที่ใช้รับส่งค่าในระบบ
 package grade
 
 type Request struct {
